@@ -1,0 +1,17 @@
+---
+import BlogLayout from "../../layouts/BlogLayout.astro";
+import getApiUrl from "../../utils/getApiUrl";
+import SingleBlogItem from "../../components/SingleBlogItem";
+
+const { slug } = Astro.params;
+
+const url = `${getApiUrl()}/api/posts?filters[slug][$eq]=${slug}&populate[0]=featuredImage&populate[1]=author&populate[3]=author.avatar`;
+
+const { data: postItem } = await fetch(url).then((res) => res.json());
+---
+
+<BlogLayout title={slug || "Blog"}>
+  <div>slug = {slug}</div>
+
+  <SingleBlogItem post={postItem[0]} />
+</BlogLayout>

@@ -1,0 +1,23 @@
+---
+import BlogGrid from "../../components/react/BlogGrid";
+import BlogLayout from "../../layouts/BlogLayout.astro";
+import getApiUrl from "../../utils/getApiUrl";
+
+const { data: posts } = await fetch(`${getApiUrl()}/api/posts?populate=*`).then(
+  (res) => res.json()
+);
+---
+
+<BlogLayout title="Blog">
+  <main>
+    <div class="container max-w-5xl mx-auto px-4 py-8 mt-16">
+      <h1 class="text-4xl font-bold">Articoli:</h1>
+      <!-- <p class="">A collection of posts</p> -->
+      <button class="btn btn-xs rounded-full gap-2">Responsive</button>
+    </div>
+
+    <div class="container max-w-5xl mx-auto px-4 py-8">
+      <BlogGrid posts={posts} />
+    </div>
+  </main>
+</BlogLayout>
