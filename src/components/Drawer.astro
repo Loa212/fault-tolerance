@@ -3,8 +3,9 @@ import { Close } from "../assets/icons";
 import LoaLogo from "../assets/loalogo2.png";
 
 const navLinks = [
-  { name: "Blog", href: "/blog" },
-  { name: "Navbar Item 2", href: "#" },
+  { name: "Services", href: "#" },
+  { name: "About us", href: "#" },
+  { name: "Showcase", href: "/blog" },
 ];
 ---
 
@@ -12,9 +13,16 @@ const navLinks = [
   <input id="my-drawer-3" type="checkbox" class="drawer-toggle" />
   <div class="drawer-content flex flex-col">
     <!-- Navbar -->
-    <div class="fixed z-50 w-full navbar bg-white border-b border-slate-700/20">
-      <div class="w-full max-w-7xl mx-auto">
-        <a href="/" class="flex-1 px-2 flex items-center justify-start gap-2">
+    <div
+      class="sticky inset-y-0 -top-0.5 z-50 w-full navbar bg-dark text-light"
+    >
+      <div
+        class="w-full max-w-7xl mx-auto border-b border-light/20 min-h-[72px]"
+      >
+        <a
+          href="/"
+          class="grow px-2 flex items-center justify-start gap-2 mr-40"
+        >
           <img class="h-8 w-8" src={LoaLogo} alt="loa-logo" />
           Loa212</a
         >
@@ -33,16 +41,23 @@ const navLinks = [
             </svg>
           </label>
         </div>
-        <div class="flex-none hidden lg:block">
-          <ul class="menu menu-horizontal">
+        <div class="grow hidden lg:block">
+          <ul
+            class="menu menu-horizontal w-full max-w-4xl drawer-end justify-between"
+          >
             <!-- Navbar menu content here -->
             {
               navLinks.map((link) => (
-                <li>
+                <li class="font-semibold underline underline-offset-4 decoration-1 text-light hover:text-white hover:decoration-2 decoration-light hover:decoration-slate-200">
                   <a href={link.href}>{link.name}</a>
                 </li>
               ))
             }
+            <button class="text-light font-semibold bg-light/20 px-4 py-2">
+              Contact us</button
+            >
+
+            <!-- <ThemeSwitcher /> -->
           </ul>
         </div>
       </div>
@@ -54,14 +69,16 @@ const navLinks = [
   </div>
   <div class="drawer-side">
     <label for="my-drawer-3" class="drawer-overlay"></label>
-    <ul class="menu p-4 w-80 bg-base-100">
+    <ul
+      class="menu p-4 w-80 bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-100"
+    >
       <!-- Sidebar content here -->
-      <label
-        for="my-drawer-3"
-        class="btn btn-square btn-ghost ring self-end mb-3"
-      >
-        <Close size={16} />
-      </label>
+      <div class="flex items-center justify-between">
+        <p>gg</p>
+        <label for="my-drawer-3" class="btn btn-square self-end">
+          <Close size={28} />
+        </label>
+      </div>
 
       {
         navLinks.map((link) => (
