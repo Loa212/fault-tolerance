@@ -1,6 +1,7 @@
 ---
 import Drawer from "../components/Drawer.astro";
 import "@fontsource/montserrat";
+import Footer from "../components/Footer.astro";
 
 export interface Props {
   title: string;
@@ -56,11 +57,43 @@ PS. if you are reading this, you are a hacker
 -->
     <Drawer>
       <slot />
+      <!-- <Footer /> -->
     </Drawer>
   </body>
 </html>
 <style is:global>
   body {
     font-family: "Montserrat", sans-serif;
+    @apply bg-dark text-light;
+  }
+
+  /* ===== Scrollbar CSS ===== */
+  /* Firefox */
+  * {
+    scrollbar-width: auto;
+    scrollbar-color: #0d0d0d #ffffff;
+  }
+
+  /* Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: #ffffff;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: #0d0d0d;
+    border-radius: 0px;
+    border: 0px solid #ffffff;
+  }
+
+  .content {
+    @apply max-w-7xl mx-auto px-2;
+  }
+
+  .btn-default {
+    @apply text-light font-semibold bg-light/20 px-4 py-2;
   }
 </style>

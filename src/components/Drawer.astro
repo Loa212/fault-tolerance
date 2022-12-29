@@ -1,6 +1,7 @@
 ---
 import { Close } from "../assets/icons";
 import LoaLogo from "../assets/loalogo2.png";
+import Logo from "../assets/ft_logo.png";
 
 const navLinks = [
   { name: "Services", href: "#" },
@@ -17,15 +18,14 @@ const navLinks = [
       class="sticky inset-y-0 -top-0.5 z-50 w-full navbar bg-dark text-light"
     >
       <div
-        class="w-full max-w-7xl mx-auto border-b border-light/20 min-h-[72px]"
+        class="w-full max-w-7xl mx-auto border-b border-light/20 bg-dark min-h-[72px]"
       >
         <a
           href="/"
           class="grow px-2 flex items-center justify-start gap-2 mr-40"
         >
-          <img class="h-8 w-8" src={LoaLogo} alt="loa-logo" />
-          Loa212</a
-        >
+          <img class="h-[60px] w-[60px]" src={Logo} alt="loa-logo" />
+        </a>
         <div class="flex-none lg:hidden">
           <label for="my-drawer-3" class="btn btn-square btn-ghost">
             <svg
@@ -53,9 +53,7 @@ const navLinks = [
                 </li>
               ))
             }
-            <button class="text-light font-semibold bg-light/20 px-4 py-2">
-              Contact us</button
-            >
+            <button class="btn-default"> Contact us</button>
 
             <!-- <ThemeSwitcher /> -->
           </ul>
@@ -68,10 +66,9 @@ const navLinks = [
     </div>
   </div>
   <div class="drawer-side">
-    <label for="my-drawer-3" class="drawer-overlay"></label>
-    <ul
-      class="menu p-4 w-80 bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-100"
-    >
+    <label for="my-drawer-3" class="drawer-overlay backdrop-brightness-50"
+    ></label>
+    <ul class="menu p-4 w-80 bg-dark text-light">
       <!-- Sidebar content here -->
       <div class="flex items-center justify-between">
         <p>gg</p>
