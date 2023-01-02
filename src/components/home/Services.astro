@@ -1,0 +1,26 @@
+---
+import { services } from "../../utils/constants";
+---
+
+<section class="content relative mt-28">
+  <div
+    class="w-0 h-0 absolute inset-x-0 -top-28 -left-1/4 right-1/2 -z-20 border-t-[10vh] border-t-transparent border-b-[300px] border-b-transparent border-l-[150vw] border-l-light/10"
+  >
+  </div>
+  <h2 class="font-bold text-3xl lg:text-4xl">Discover our services</h2>
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 my-14">
+    {
+      services.map((service) => (
+        <div class="card text-light ring ring-light">
+          <div class="card-body items-center text-center">
+            <h2 class="card-title">{service.title}</h2>
+            <p>{service.description}</p>
+            <div class="card-actions justify-end">
+              <button class="btn btn-primary">Read more</button>
+            </div>
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</section>
