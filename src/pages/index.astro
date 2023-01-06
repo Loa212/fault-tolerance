@@ -4,6 +4,7 @@ import Layout from "../layouts/Layout.astro";
 import Testimonials from "../components/home/Testimonials.astro";
 import Services from "../components/home/Services.astro";
 import Cta2 from "../components/home/Cta2.astro";
+import dimonds from "../assets/dimonds.svg";
 ---
 
 <Layout title="Fault tolerance">
@@ -50,6 +51,37 @@ import Cta2 from "../components/home/Cta2.astro";
               look forward to working with you!
             </p>
           </div>
+        </div>
+      </section>
+
+      <section class="content relative mt-16">
+        <div class="grid grid-cols-1 lg:grid-cols-5 gap-24">
+          <div class="col-span-3">
+            <h2
+              class="text-start max-w-7xl mx-auto text-3xl md:text-5xl font-bold"
+            >
+              Enterprise solutions for your blockchain project
+            </h2>
+            <p class="max-w-7xl mx-auto text-justify mt-4 md:mt-6">
+              Our team has the expertise and experience to help you succeed. We
+              offer a range of enterprise solutions that are tailored to meet
+              the specific needs of your business.
+              <br /><br />
+              Our enterprise solutions are designed to be scalable, reliable, and
+              secure, ensuring that your blockchain project runs smoothly and achieves
+              your desired outcomes.
+              <br /><br />
+              Whether you're looking to streamline internal processes, increase transparency
+              and accountability, or create new revenue streams, we have the expertise
+              to help you reach your goals.
+              <br /><br />
+              We take a consultative approach working with our clients, taking the
+              time to understand your business needs and objectives. From there,
+              we work with you to develop a customized solution that meets your specific
+              requirements.
+            </p>
+          </div>
+          <img class="hidden lg:block col-span-2" src={dimonds} alt="dimonds" />
         </div>
       </section>
 
