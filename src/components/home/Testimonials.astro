@@ -1,5 +1,7 @@
 ---
 import tesseract from "../../assets/tesseract.webp";
+import { LogoGithub } from "../../assets/icons";
+import TestimonialCard from "../TestimonialCard.astro";
 ---
 
 <section class="content relative mt-20">
@@ -32,42 +34,24 @@ import tesseract from "../../assets/tesseract.webp";
     </h2>
 
     <div class="grid lg:grid-cols-3 gap-8 lg:gap-16 mt-9 lg:mx-9">
-      <div class="card rounded-lg bg-light text-dark shadow-xl">
-        <figure>
-          <img src="https://placeimg.com/400/225/arch" alt="Shoes" />
-        </figure>
-        <div class="card-body">
-          <h2 class="card-title">Customer</h2>
-          <p>Io non posso fare altro che stare qui ad annaffiare.</p>
-          <div class="card-actions justify-end">
-            <button class="btn btn-primary">Però</button>
-          </div>
-        </div>
-      </div>
-      <div class="card rounded-lg bg-light text-dark shadow-xl">
-        <figure>
-          <img src="https://placeimg.com/400/225/arch" alt="Shoes" />
-        </figure>
-        <div class="card-body">
-          <h2 class="card-title">Customer</h2>
-          <p>Io non posso fare altro che stare qui ad annaffiare.</p>
-          <div class="card-actions justify-end">
-            <button class="btn btn-primary">Però</button>
-          </div>
-        </div>
-      </div>
-      <div class="card rounded-lg bg-light text-dark shadow-xl">
-        <figure>
-          <img src="https://placeimg.com/400/225/arch" alt="Shoes" />
-        </figure>
-        <div class="card-body">
-          <h2 class="card-title">Customer</h2>
-          <p>Io non posso fare altro che stare qui ad annaffiare.</p>
-          <div class="card-actions justify-end">
-            <button class="btn btn-primary">Però</button>
-          </div>
-        </div>
-      </div>
+      <TestimonialCard
+        title="Customer"
+        image="https://placeimg.com/400/225/arch"
+        content="Io non posso fare altro che stare qui ad annaffiare."
+        githubLink="https://github.com"
+      />
+      <TestimonialCard
+        title="Customer"
+        image="https://placeimg.com/400/225/arch"
+        content="Io non posso fare altro che stare qui ad annaffiare."
+        githubLink="https://github.com"
+      />
+      <TestimonialCard
+        title="Customer"
+        image="https://placeimg.com/400/225/arch"
+        content="Io non posso fare altro che stare qui ad annaffiare."
+        githubLink="https://github.com"
+      />
     </div>
   </div>
 </section>
