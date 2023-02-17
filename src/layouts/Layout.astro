@@ -1,7 +1,7 @@
 ---
 import Drawer from "../components/Drawer.astro";
 import "@fontsource/montserrat";
-import Footer from "../components/Footer.astro";
+import ScrollTop from "../components/react/ScrollTop";
 
 export interface Props {
   title: string;
@@ -57,7 +57,6 @@ PS. if you are reading this, you are a hacker
 -->
     <Drawer>
       <slot />
-      <!-- <Footer /> -->
     </Drawer>
   </body>
 </html>

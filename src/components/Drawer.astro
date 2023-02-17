@@ -3,9 +3,9 @@ import { Close } from "../assets/icons";
 import Logo from "../assets/ft_logo.png";
 
 const navLinks = [
-  { name: "Services", href: "#" },
-  { name: "About us", href: "#" },
-  { name: "Showcase", href: "#" },
+  { name: "Showcase", href: "#showcase" },
+  { name: "Services", href: "#services" },
+  { name: "About us", href: "#about-us" },
 ];
 ---
 
@@ -70,7 +70,7 @@ const navLinks = [
     <ul class="menu p-4 w-80 bg-dark text-light">
       <!-- Sidebar content here -->
       <div class="flex items-center justify-between">
-        <p>gg</p>
+        <p class="opacity-0">gg</p>
         <label for="my-drawer-3" class="btn btn-square self-end">
           <Close size={28} />
         </label>
@@ -78,7 +78,7 @@ const navLinks = [
 
       {
         navLinks.map((link) => (
-          <li>
+          <li onclick="document.getElementById('my-drawer-3').checked = false">
             <a href={link.href}>{link.name}</a>
           </li>
         ))

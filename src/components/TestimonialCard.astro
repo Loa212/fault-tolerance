@@ -18,7 +18,15 @@ const { title, image, content, githubLink } = Astro.props as CardProps;
   <div class="card-body">
     <h2 class="card-title">{title}</h2>
     <p>{content}</p>
-    <div class="card-actions justify-end">
+    <div class="card-actions justify-between mt-4">
+      <a
+        href="http://medium.com"
+        target="_blank"
+        class="btn btn-sm hover:bg-teal-200/20"
+      >
+        Read full article</a
+      >
+
       <a href={githubLink}>
         <svg
           width="28"
