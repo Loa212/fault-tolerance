@@ -1,0 +1,74 @@
+---
+import type { CollectionEntry } from "astro:content";
+import Drawer from "../components/Drawer.astro";
+import Footer from "../components/Footer.astro";
+
+type Props = CollectionEntry<"blog">["data"];
+const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html data-theme="dark" lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+  </head>
+  <body>
+    <Drawer>
+      <div class="bg-dark text-white">
+        <article
+          class="max-w-5xl mx-4 lg:mx-auto pt-8 prose prose-headings:underline prose-a:text-secondary"
+        >
+          {heroImage && <img width={720} height={360} src={heroImage} alt="" />}
+
+          <slot />
+        </article>
+      </div>
+      <Footer />
+    </Drawer>
+  </body>
+</html>
+<style is:global>
+  body {
+    /* font-family: "Montserrat", sans-serif; */
+    /* font-family: "Poppins", sans-serif; */
+    /* font-family: "Inter", sans-serif; */
+    font-family: "Noto Sans Miao", sans-serif;
+
+    @apply bg-dark text-light;
+  }
+
+  /* ===== Scrollbar CSS ===== */
+  /* Firefox */
+  * {
+    scrollbar-width: auto;
+    scrollbar-color: #0d0d0d #ffffff;
+  }
+
+  /* Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: #ffffff;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: #0d0d0d;
+    border-radius: 0px;
+    border: 0px solid #ffffff;
+  }
+
+  .content {
+    @apply max-w-7xl mx-auto px-2;
+  }
+
+  .btn-default {
+    @apply text-light font-semibold bg-light/20 px-4 py-2;
+  }
+</style>
