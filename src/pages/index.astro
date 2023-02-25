@@ -6,25 +6,10 @@ import Services from "../components/home/Services.astro";
 import Cta2 from "../components/home/Cta2.astro";
 import dimonds from "../assets/dimonds.svg";
 import Footer from "../components/Footer.astro";
----
-
-<!-- ---
-import BaseHead from "../components/BaseHead.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 ---
 
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-  </head>
-  <body>
-    <main>
-      <h1 class="text-red-800">🧑‍🚀 Hello, Astronaut!</h1>
-    </main>
-  </body>
-</html> -->
-<Layout title="Fault tolerance">
+<Layout title={SITE_TITLE} description={SITE_DESCRIPTION}>
   <main>
     <div class="h-screen overflow-x-clip">
       <Hero />

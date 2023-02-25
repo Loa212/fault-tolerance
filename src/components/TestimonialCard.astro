@@ -1,29 +1,28 @@
 ---
 export interface CardProps {
+  slug: string;
   title: string;
   image: string;
+  imageAlt: string;
   content: string;
   githubLink: string;
 }
 
-const { title, image, content, githubLink } = Astro.props as CardProps;
+const { slug, title, image, imageAlt, content, githubLink } =
+  Astro.props as CardProps;
 ---
 
 <div
   class="card rounded-lg bg-dark text-light shadow-xl ring-1 ring-slate-200/10 hover:ring-slate-200/20 transition-all duration-100 ease-in-out"
 >
   <figure>
-    <img src="https://placeimg.com/400/225/arch" alt="Shoes" />
+    <img src={image} alt={imageAlt} />
   </figure>
   <div class="card-body">
     <h2 class="card-title">{title}</h2>
     <p>{content}</p>
     <div class="card-actions justify-between mt-4">
-      <a
-        href="http://medium.com"
-        target="_blank"
-        class="btn btn-sm hover:bg-teal-200/20"
-      >
+      <a href={`/blog/${slug}`} class="btn btn-sm hover:bg-teal-200/20">
         Read full article</a
       >
 
