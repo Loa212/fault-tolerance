@@ -10,7 +10,7 @@ const navLinks = [
 ---
 
 <div class="drawer drawer-end">
-  <input id="my-drawer-3" type="checkbox" class="drawer-toggle" />
+  <input id="drawer-toggle" type="checkbox" class="drawer-toggle" />
   <div class="drawer-content flex flex-col">
     <!-- Navbar -->
     <div
@@ -23,10 +23,14 @@ const navLinks = [
           href="/"
           class="grow px-2 flex items-center justify-start gap-2 mr-40"
         >
-          <img class="h-16 w-24 object-cover" src={Logo} alt="logo" />
+          <img
+            class="w-20 h-20 lg:w-24 lg:h-16 object-cover"
+            src={Logo}
+            alt="logo"
+          />
         </a>
         <div class="flex-none lg:hidden">
-          <label for="my-drawer-3" class="btn btn-square btn-ghost">
+          <label for="drawer-toggle" class="btn btn-square btn-ghost">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -65,16 +69,19 @@ const navLinks = [
     </div>
   </div>
   <div class="drawer-side">
-    <label for="my-drawer-3" class="drawer-overlay backdrop-brightness-50"
+    <label for="drawer-toggle" class="drawer-overlay backdrop-brightness-50"
     ></label>
     <ul class="menu p-4 w-80 bg-dark text-light">
       <!-- Sidebar content here -->
-      <div class="flex items-center justify-between">
-        <p class="opacity-0">gg</p>
-        <label for="my-drawer-3" class="btn btn-square self-end">
+      <li class="flex items-center justify-between">
+        <button
+          aria-label="drawer-close"
+          onclick="document.getElementById('drawer-toggle').checked = false"
+          class="btn btn-square self-end"
+        >
           <Close size={28} />
-        </label>
-      </div>
+        </button>
+      </li>
 
       {
         navLinks.map((link) => (

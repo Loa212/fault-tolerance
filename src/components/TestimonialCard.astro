@@ -16,7 +16,11 @@ const { slug, title, image, imageAlt, content, githubLink } =
   class="card rounded-lg bg-dark text-light shadow-xl ring-1 ring-slate-200/10 hover:ring-slate-200/20 transition-all duration-100 ease-in-out"
 >
   <figure>
-    <img src={image} alt={imageAlt} />
+    <img
+      class="w-80 h-52 lg:w-96 lg:h-60 object-cover"
+      src={image}
+      alt={imageAlt}
+    />
   </figure>
   <div class="card-body">
     <h2 class="card-title">{title}</h2>
@@ -26,7 +30,7 @@ const { slug, title, image, imageAlt, content, githubLink } =
         Read full article</a
       >
 
-      <a href={githubLink}>
+      <a href={githubLink} aria-label={`go to ${githubLink}`}>
         <svg
           width="28"
           height="28"
