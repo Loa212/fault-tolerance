@@ -7,6 +7,8 @@ import Cta2 from "../components/home/Cta2.astro";
 import dimonds from "../assets/dimonds.svg";
 import Footer from "../components/Footer.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+import mockimage from "../../public/placeholder-about.jpg";
+import romboids from "../assets/romboids.png";
 ---
 
 <Layout title={SITE_TITLE} description={SITE_DESCRIPTION}>
@@ -21,15 +23,17 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
       <Cta2 />
 
       <section id="about-us" class="content relative pt-16 lg:pt-24">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
-          <div class="bg-secondary"></div>
-          <div>
+        <div class="grid grid-cols-1 lg:grid-cols-5 gap-10">
+          <figure class="col-span-2 hidden lg:block">
+            <img src={romboids} alt="about us" />
+          </figure>
+          <div class="col-span-3">
             <h2
               class="text-start max-w-7xl mx-auto text-3xl md:text-5xl font-bold"
             >
               About us
             </h2>
-            <p class="max-w-7xl mx-auto text-justify mt-4 md:mt-6">
+            <p class="max-w-7xl mx-auto mt-4 md:mt-6">
               Our software house is a team of dedicated professionals who are
               passionate about using technology, including blockchain, to make a
               positive impact on the world.
@@ -64,7 +68,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
             >
               Enterprise solutions for your blockchain project
             </h2>
-            <p class="max-w-7xl mx-auto text-justify mt-4 md:mt-6">
+            <p class="max-w-7xl mx-auto mt-4 md:mt-6">
               Our team has the expertise and experience to help you succeed. We
               offer a range of enterprise solutions that are tailored to meet
               the specific needs of your business.

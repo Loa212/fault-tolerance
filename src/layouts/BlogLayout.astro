@@ -12,7 +12,7 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="ico" href="/favicon.ico" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
     <meta name="description" content={description} />
@@ -20,10 +20,34 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
   <body>
     <Drawer>
       <div class="bg-dark text-white">
+        <div class="max-w-5xl mx-4 lg:mx-auto text-sm breadcrumbs mt-4">
+          <ul>
+            <li>
+              <a class="link underline-offset-2 hover:decoration-2" href="/"
+                >Home</a
+              >
+            </li>
+            <li>
+              <a href="/blog" class="link underline-offset-2 hover:decoration-2"
+                >Blog</a
+              >
+            </li>
+            <li class="text-secondary">{title}</li>
+          </ul>
+        </div>
         <article
           class="max-w-5xl mx-4 lg:mx-auto pt-8 prose prose-headings:underline prose-a:text-secondary"
         >
-          {heroImage && <img width={720} height={360} src={heroImage} alt="" />}
+          {
+            heroImage && (
+              <img
+                width={720}
+                height={360}
+                src={heroImage}
+                alt={title + " featured image"}
+              />
+            )
+          }
 
           <slot />
         </article>
