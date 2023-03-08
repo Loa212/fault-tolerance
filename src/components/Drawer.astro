@@ -2,12 +2,15 @@
 import { Close } from "../assets/icons";
 import Logo from "../assets/Logo2.png";
 
-const navLinks = [
-  { name: "Showcase", href: "#showcase" },
-  { name: "Services", href: "#services" },
-  { name: "About us", href: "#about-us" },
-  { name: "Blog", href: "/blog" },
-];
+type Props = {
+  navLinks: {
+    name: string;
+    href: string;
+    isCurrent?: boolean;
+  }[];
+};
+
+const { navLinks } = Astro.props;
 ---
 
 <div class="drawer drawer-end">
@@ -48,7 +51,14 @@ const navLinks = [
             <!-- Navbar menu content here -->
             {
               navLinks.map((link) => (
-                <li class="font-semibold underline underline-offset-4 decoration-1 text-light hover:text-white hover:decoration-2 decoration-light hover:decoration-slate-200">
+                <li
+                  class={
+                    `font-semibold underline underline-offset-4 decoration-1 text-light  decoration-light ` +
+                    (link.isCurrent
+                      ? " text-secondary decoration-secondary"
+                      : " hover:text-white hover:decoration-2 hover:decoration-slate-200")
+                  }
+                >
                   <a href={link.href}>{link.name}</a>
                 </li>
               ))
@@ -80,10 +90,19 @@ const navLinks = [
         </button>
       </li>
 
+      <li onclick="document.getElementById('drawer-toggle').checked = false">
+        <a class={`text-2xl my-4`} href={"/"}> Home</a>
+      </li>
+
       {
         navLinks.map((link) => (
           <li onclick="document.getElementById('drawer-toggle').checked = false">
-            <a class="text-2xl my-4" href={link.href}>
+            <a
+              class={
+                `text-2xl my-4` + (link.isCurrent ? " text-secondary" : "")
+              }
+              href={link.href}
+            >
               {link.name}
             </a>
           </li>

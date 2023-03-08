@@ -8,6 +8,12 @@ export interface Props {
 }
 
 const { title, description } = Astro.props;
+const navLinks = [
+  { name: "Showcase", href: "#showcase" },
+  { name: "Services", href: "#services" },
+  { name: "About us", href: "#about-us" },
+  { name: "Blog", href: "/blog" },
+];
 ---
 
 <!DOCTYPE html>
@@ -56,7 +62,7 @@ const { title, description } = Astro.props;
 
 PS. if you are reading this, you are a hacker
 -->
-    <Drawer>
+    <Drawer navLinks={navLinks}>
       <slot />
     </Drawer>
   </body>

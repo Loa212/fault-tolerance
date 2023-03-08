@@ -9,6 +9,8 @@ import Footer from "../components/Footer.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 import mockimage from "../../public/placeholder-about.jpg";
 import romboids from "../assets/romboids.png";
+import d20s from "../assets/newFigures/d20s.svg";
+import dimonds2 from "../assets/newFigures/dimonds.svg";
 ---
 
 <Layout title={SITE_TITLE} description={SITE_DESCRIPTION}>
@@ -25,7 +27,7 @@ import romboids from "../assets/romboids.png";
       <section id="about-us" class="content relative pt-16 lg:pt-24">
         <div class="grid grid-cols-1 lg:grid-cols-5 gap-10">
           <figure class="col-span-2 hidden lg:block">
-            <img src={romboids} alt="about us" />
+            <img src={d20s} alt="about us" />
           </figure>
           <div class="col-span-3">
             <h2
@@ -87,7 +89,11 @@ import romboids from "../assets/romboids.png";
               requirements.
             </p>
           </div>
-          <img class="hidden lg:block col-span-2" src={dimonds} alt="dimonds" />
+          <img
+            class="hidden lg:block col-span-2"
+            src={dimonds2}
+            alt="dimonds"
+          />
         </div>
       </section>
 

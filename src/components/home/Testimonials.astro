@@ -1,5 +1,5 @@
 ---
-import tesseract from "../../assets/tesseract.webp";
+import tesseract from "../../assets/newFigures/tesseract.webp";
 import { LogoGithub } from "../../assets/icons";
 import TestimonialCard from "../TestimonialCard.astro";
 import { getCollection } from "astro:content";
@@ -13,7 +13,7 @@ const posts = (await getCollection("blog"))
   <img
     height="288px"
     width="327px"
-    class="absolute -left-8 lg:-left-20 -bottom-20 w-32 h-28 lg:w-auto lg:h-auto aspect-[327/288]"
+    class="absolute -left-8 lg:-left-20 -bottom-20 w-32 h-28 lg:w-80 lg:h-72"
     src={tesseract}
     alt="tesseract"
   />
